@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
     <title>Electronic Point | Expert TV Repair & Installation in Jaipur</title>
-    <meta name="description" content="Top-rated LED, LCD, Smart, and QLED TV repair in Mansarovar, Jaipur. Fast, affordable same-day home service by Electronic Point. Call 8285111114.">
+    <meta name="description" content="Top-rated LED, LCD, Smart, and QLED TV repair in Mansarovar, Jaipur. Fast, affordable home service by Electronic Point.">
     <meta name="keywords" content="TV repair Jaipur, LED TV repair Mansarovar, Smart TV repair near me, TV installation Jaipur, QLED repair, Electronic Point">
     <meta name="author" content="Electronic Point">
     <meta name="robots" content="index, follow">
@@ -58,12 +58,16 @@
     <nav class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-2">
-                <i class="fa-solid fa-tv text-brandSky text-2xl"></i>
+                <i class="fa-solid fa-tv text-brandSky text-2xl transform hover:scale-110 transition-transform"></i>
                 <span class="text-xl font-extrabold tracking-tight text-slate-800">ELECTRONIC<span class="text-brandSky">POINT</span></span>
             </div>
             
-            <!-- Desktop Buttons & Dashboard Toggle -->
-            <div class="flex items-center space-x-4">
+            <div class="flex items-center space-x-6">
+                <!-- New Services Tab Link -->
+                <a href="#services" class="hidden md:block text-sm font-bold text-slate-600 hover:text-brandSky transition-colors">
+                    Our Services
+                </a>
+                
                 <button onclick="toggleView()" id="toggleBtn" class="hidden sm:flex text-xs font-bold text-slate-500 hover:text-brandSky bg-slate-100 px-3 py-1.5 rounded-md border border-transparent hover:border-brandSky/30 transition-all duration-300 items-center space-x-1">
                     <i class="fa-solid fa-lock"></i>
                     <span id="toggleText">Staff Login</span>
@@ -71,11 +75,11 @@
                 <div class="hidden md:flex items-center space-x-3">
                     <a href="tel:8285111114" class="text-sm font-semibold text-slate-600 hover:text-brandSky bg-slate-50 border border-slate-100 hover:border-brandSky/40 px-3 py-2 rounded-lg transition-all duration-300 flex items-center space-x-1 hover:shadow-[0_0_15px_rgba(14,165,233,0.15)]">
                         <i class="fa-solid fa-phone"></i>
-                        <span>8285111114</span>
+                        <span>Call Us</span>
                     </a>
                     <a href="tel:8285111113" class="bg-brandSky hover:bg-sky-600 text-white font-bold text-sm px-5 py-2 rounded-lg transform hover:-translate-y-0.5 transition-all duration-300 shadow-md hover:shadow-[0_0_20px_rgba(14,165,233,0.4)] flex items-center space-x-2">
                         <i class="fa-solid fa-headset"></i>
-                        <span>Call 8285111113</span>
+                        <span>Call Us</span>
                     </a>
                 </div>
             </div>
@@ -102,7 +106,7 @@
                         Expert TV Repair & Installation <br class="hidden sm:inline">Right at Your Doorstep
                     </h1>
                     <p class="text-base sm:text-xl text-slate-600 max-w-2xl mx-auto">
-                        Fast, affordable, and highly reliable repair solutions for LED, LCD, Smart, and QLED TVs. Get served today by certified technicians.
+                        Fast, affordable, and highly reliable repair solutions for LED, LCD, Smart, and QLED TVs. Get served by certified technicians.
                     </p>
                     <div class="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
                         <a href="tel:8285111114" class="w-full sm:w-auto bg-brandSky hover:bg-sky-600 px-8 py-4 rounded-xl font-bold text-white transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center space-x-3 shadow-lg hover:shadow-[0_0_25px_rgba(14,165,233,0.5)]">
@@ -113,97 +117,167 @@
                 </div>
             </div>
 
-            <!-- ABOUT ME / US SECTION -->
-            <section class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6">
-                    <h2 class="text-3xl font-bold text-slate-900">About Electronic Point</h2>
-                    <div class="w-20 h-1.5 bg-brandSky rounded-full"></div>
-                    <p class="text-slate-600 leading-relaxed text-lg">
-                        Welcome to Electronic Point, Jaipur's most trusted hub for television diagnostics and repair. Located in the heart of Mansarovar, we built this business on three simple principles: **honesty, speed, and technical excellence.**
-                    </p>
-                    <p class="text-slate-600 leading-relaxed text-lg">
-                        We know how frustrating it is when your primary source of entertainment goes dark. That's why we eliminated the hassle of dragging heavy TVs to a shop. Our certified technicians bring the workshop to your living room, equipped with genuine parts to handle everything from complex motherboard faults to precision panel replacements. 
-                    </p>
-                    <div class="flex items-center space-x-6 pt-2">
-                        <div class="flex items-center space-x-2">
-                            <i class="fa-solid fa-check-circle text-brandSky text-xl"></i>
-                            <span class="font-bold text-slate-800">Same-Day Service</span>
+            <!-- ENHANCED ABOUT US SECTION WITH NEW COPY -->
+            <section class="bg-white p-8 sm:p-12 rounded-3xl border border-slate-100 shadow-sm">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    
+                    <!-- Left Side: Story & Mission -->
+                    <div class="space-y-8">
+                        <div class="space-y-4">
+                            <div class="inline-flex items-center space-x-2 bg-slate-100 px-3 py-1 rounded-full text-xs font-bold text-slate-600 uppercase tracking-widest">
+                                <span>Who We Are</span>
+                            </div>
+                            <h2 class="text-3xl font-bold text-slate-900">About Electronic Point</h2>
+                            <div class="w-20 h-1.5 bg-brandSky rounded-full"></div>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fa-solid fa-check-circle text-brandSky text-xl"></i>
-                            <span class="font-bold text-slate-800">Transparent Pricing</span>
+
+                        <div class="space-y-6 text-slate-600 leading-relaxed text-[17px]">
+                            <p>
+                                We are a dedicated team of <span class="font-bold text-slate-900">5 experienced technicians</span> specializing in LED and LCD TV repair. With over 15 years of industry experience, we have built a reputation for delivering reliable, high-quality service for all major television brands.
+                            </p>
+                            <p>
+                                Each team member is skilled in diagnostics, repair, and customer support, ensuring your devices are handled with care and precision. We believe in transparent service, fair pricing, and building trust with every customer we serve, making us your dependable choice for all TV repair needs.
+                            </p>
+                            
+                            <div class="bg-brandLight border-l-4 border-brandSky p-6 rounded-r-xl mt-4">
+                                <h3 class="font-bold text-slate-900 text-lg mb-2">Our Mission</h3>
+                                <p class="text-sm">
+                                    To provide friendly, personalized service through highly skilled professionals. We strive to exceed expectations, deliver reliable repairs that extend device lifespans, and commit to honest diagnostics and transparent pricing.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Business Stats Banner -->
+                        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-100 text-center">
+                            <div>
+                                <div class="text-3xl font-black text-brandSky">15</div>
+                                <div class="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-wide mt-1">Years In Business</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-black text-brandSky">2500+</div>
+                                <div class="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-wide mt-1">Happy Customers</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-black text-brandSky">5</div>
+                                <div class="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-wide mt-1">Pro Awards</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="bg-brandLight rounded-2xl p-8 border border-sky-100 flex items-center justify-center relative shadow-inner">
-                    <div class="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent rounded-2xl"></div>
-                    <div class="relative z-10 text-center space-y-4">
-                        <i class="fa-solid fa-award text-6xl text-brandSky mb-2"></i>
-                        <h3 class="text-2xl font-black text-slate-800">100% Satisfaction</h3>
-                        <p class="text-slate-600">Committed to providing the best electronics repair experience in Rajasthan.</p>
+
+                    <!-- Right Side: Why Choose Us & Values -->
+                    <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200 h-full flex flex-col justify-center space-y-8">
+                        
+                        <!-- Why Choose Us List -->
+                        <div>
+                            <h3 class="text-2xl font-black text-slate-800 mb-5 flex items-center"><i class="fa-solid fa-circle-check text-brandSky mr-3"></i>Why Choose Us?</h3>
+                            <ul class="space-y-4 text-sm text-slate-700">
+                                <li class="flex items-start"><i class="fa-solid fa-check text-brandSky mt-1 mr-3"></i> <span><strong>Quality:</strong> We use the best practices and parts for every repair.</span></li>
+                                <li class="flex items-start"><i class="fa-solid fa-check text-brandSky mt-1 mr-3"></i> <span><strong>Transparency:</strong> Clear diagnostics and fair pricing with no hidden charges.</span></li>
+                                <li class="flex items-start"><i class="fa-solid fa-check text-brandSky mt-1 mr-3"></i> <span><strong>Reliability:</strong> Timely service you can count on, every time.</span></li>
+                                <li class="flex items-start"><i class="fa-solid fa-check text-brandSky mt-1 mr-3"></i> <span><strong>Customer Satisfaction:</strong> We focus on delivering a hassle-free experience.</span></li>
+                                <li class="flex items-start"><i class="fa-solid fa-check text-brandSky mt-1 mr-3"></i> <span><strong>Continuous Improvement:</strong> We stay updated with the latest repair techniques.</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Core Values List -->
+                        <div class="pt-6 border-t border-slate-200">
+                            <h3 class="text-xl font-bold text-slate-800 mb-4">Our Values</h3>
+                            <ul class="space-y-3 text-sm text-slate-600">
+                                <li class="flex items-start"><i class="fa-solid fa-star text-amber-400 mt-1 mr-3"></i> <span>The highest level of enthusiasm for our profession.</span></li>
+                                <li class="flex items-start"><i class="fa-solid fa-star text-amber-400 mt-1 mr-3"></i> <span>Clear explanations and upfront pricing—no hidden surprises.</span></li>
+                                <li class="flex items-start"><i class="fa-solid fa-star text-amber-400 mt-1 mr-3"></i> <span>We value your time and complete repairs within the promised timeframe.</span></li>
+                                <li class="flex items-start"><i class="fa-solid fa-star text-amber-400 mt-1 mr-3"></i> <span>Honest diagnostics—we only recommend what your device truly needs.</span></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- CORE SERVICES GRID (WITH NEW NEON HUE BLUE HOVER EFFECT) -->
-            <section class="space-y-10 bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
+            <!-- CORE SERVICES GRID WITH IMAGES -->
+            <section id="services" class="space-y-10 pt-10 scroll-mt-20">
                 <div class="text-center space-y-3">
                     <h2 class="text-3xl font-bold text-slate-900">Our Repair Services</h2>
                     <p class="text-slate-500">Advanced diagnostics for all major brands and display technologies</p>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Service 1 -->
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 transform hover:-translate-y-1 hover:border-brandSky hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300 group cursor-pointer">
-                        <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-brandSky shadow-sm mb-5 group-hover:scale-110 group-hover:bg-brandLight transition-all duration-300">
-                            <i class="fa-solid fa-tv text-2xl"></i>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service 1: Panel & Screen -->
+                    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden transform hover:-translate-y-1 hover:border-brandSky hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300 group cursor-pointer flex flex-col">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=600&q=80" alt="LED TV Screen display" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                            <i class="fa-solid fa-border-all text-white text-3xl absolute bottom-4 right-4 drop-shadow-md"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-800 mb-2 group-hover:text-brandSky transition-colors">Smart & QLED Repair</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Specialized repair workflows for premium panels, high-end software bugs, and Android/Tizen systems.</p>
+                        <div class="p-6 flex-1 bg-white">
+                            <h3 class="text-xl font-bold text-slate-800 mb-2 group-hover:text-brandSky transition-colors">Panel & Screen Fixing</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">Fixing horizontal lines, double images, and color bleeding seamlessly without layout disruption.</p>
+                        </div>
                     </div>
 
-                    <!-- Service 2 -->
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 transform hover:-translate-y-1 hover:border-brandSky hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300 group cursor-pointer">
-                        <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-brandSky shadow-sm mb-5 group-hover:scale-110 group-hover:bg-brandLight transition-all duration-300">
-                            <i class="fa-solid fa-border-all text-2xl"></i>
+                    <!-- Service 2: Motherboard Repair -->
+                    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden transform hover:-translate-y-1 hover:border-brandSky hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300 group cursor-pointer flex flex-col">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" alt="Motherboard circuitry" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                            <i class="fa-solid fa-microchip text-white text-3xl absolute bottom-4 right-4 drop-shadow-md"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-800 mb-2 group-hover:text-brandSky transition-colors">Panel & Screen Fixing</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Fixing horizontal lines, double images, and color bleeding seamlessly without layout disruption.</p>
+                        <div class="p-6 flex-1 bg-white">
+                            <h3 class="text-xl font-bold text-slate-800 mb-2 group-hover:text-brandSky transition-colors">Motherboard Repair</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">Resolving component deadlocks, blinking red light errors, power issues, and HDMI port failures on logic boards.</p>
+                        </div>
                     </div>
 
-                    <!-- Service 3 -->
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 transform hover:-translate-y-1 hover:border-brandSky hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300 group cursor-pointer">
-                        <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-brandSky shadow-sm mb-5 group-hover:scale-110 group-hover:bg-brandLight transition-all duration-300">
-                            <i class="fa-solid fa-microchip text-2xl"></i>
+                    <!-- Service 3: Installation & Wall Mount -->
+                    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden transform hover:-translate-y-1 hover:border-brandSky hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300 group cursor-pointer flex flex-col">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=600&q=80" alt="Wall mounted TV" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                            <i class="fa-solid fa-wrench text-white text-3xl absolute bottom-4 right-4 drop-shadow-md"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-800 mb-2 group-hover:text-brandSky transition-colors">Motherboard Repair</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Resolving component deadlocks, blinking red light errors, and HDMI port failures on logic boards.</p>
+                        <div class="p-6 flex-1 bg-white">
+                            <h3 class="text-xl font-bold text-slate-800 mb-2 group-hover:text-brandSky transition-colors">Wall Mount & Setup</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">Secure structural mounting using premium standard metal frames for all screen sizes, ensuring ideal view alignments.</p>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- CUSTOMER REVIEWS -->
-            <section class="space-y-10">
+            <!-- DYNAMIC CUSTOMER REVIEWS CAROUSEL -->
+            <section class="space-y-8 bg-brandLight rounded-3xl p-8 sm:p-12 border border-sky-100">
                 <div class="text-center space-y-3">
                     <h2 class="text-3xl font-bold text-slate-900">Trusted in Jaipur</h2>
-                    <p class="text-slate-500">Real feedback from our satisfied clients</p>
+                    <p class="text-slate-600">Real feedback from our 2500+ satisfied clients</p>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm hover:border-brandSky/60 hover:shadow-[0_0_15px_rgba(14,165,233,0.15)] transition-all duration-300">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="font-bold text-slate-800">Mukesh Saini</span>
-                            <div class="text-amber-400 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <div class="px-4">
+                    <div id="reviewCard" class="bg-white border border-slate-200 p-8 sm:p-12 rounded-3xl shadow-sm transition-opacity duration-500 opacity-100 hover:border-brandSky/60 hover:shadow-[0_0_15px_rgba(14,165,233,0.15)] max-w-3xl mx-auto text-center min-h-[240px] flex flex-col justify-center items-center">
+                        <div class="flex justify-center mb-6">
+                            <div class="text-amber-400 text-xl"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                         </div>
-                        <p class="text-slate-600 italic">"Very pleased with Electronic Point in Jaipur. They promptly repaired my Vu Qled tv. The technicians know their stuff and provide top-notch service."</p>
+                        <p id="reviewText" class="text-slate-600 text-lg sm:text-xl italic mb-6 leading-relaxed">"Very pleased with Electronic Point in Jaipur. They promptly repaired my Vu Qled tv. The technicians know their stuff and provide top-notch service."</p>
+                        <span id="reviewName" class="font-bold text-slate-900 text-lg uppercase tracking-wide">Mukesh Saini</span>
                     </div>
-                    <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm hover:border-brandSky/60 hover:shadow-[0_0_15px_rgba(14,165,233,0.15)] transition-all duration-300">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="font-bold text-slate-800">Shivansh Sharma</span>
-                            <div class="text-amber-400 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                        </div>
-                        <p class="text-slate-600 italic">"Thank you for fixing my 55inch TCL Tv. It was a wonderful experience and the price for very affordable."</p>
-                    </div>
+                </div>
+            </section>
+
+            <!-- LIVE GOOGLE MAPS LOCATION WIDGET -->
+            <section class="space-y-6">
+                <div class="flex items-center space-x-3 mb-6">
+                    <i class="fa-solid fa-map-location-dot text-2xl text-brandSky"></i>
+                    <h2 class="text-2xl font-bold text-slate-900">Find Our Workshop</h2>
+                </div>
+                <div class="w-full h-72 sm:h-96 rounded-3xl overflow-hidden shadow-lg border border-slate-200 relative group">
+                    <div class="absolute inset-0 border-4 border-transparent group-hover:border-brandSky/30 rounded-3xl transition-colors duration-300 pointer-events-none z-10"></div>
+                    <iframe 
+                        width="100%" 
+                        height="100%" 
+                        frameborder="0" 
+                        scrolling="no" 
+                        marginheight="0" 
+                        marginwidth="0" 
+                        src="https://maps.google.com/maps?q=61/17,+Rajat+Path,+Narayan+Pura,+Sector+61,+Mansarovar,+Jaipur,+Rajasthan+302020&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        class="filter contrast-100">
+                    </iframe>
                 </div>
             </section>
 
@@ -223,10 +297,14 @@
                     </div>
                 </div>
                 <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 text-center lg:text-right">
-                    <p class="text-brandSky font-bold tracking-widest uppercase text-xs mb-2">Direct Tech Dispatch</p>
-                    <div class="flex flex-col space-y-2">
-                        <a href="tel:8285111114" class="text-3xl font-black text-white hover:text-brandSky transition-colors duration-300">8285111114</a>
-                        <a href="tel:8285111113" class="text-2xl font-bold text-slate-300 hover:text-brandSky transition-colors duration-300">8285111113</a>
+                    <p class="text-brandSky font-bold tracking-widest uppercase text-xs mb-4">Direct Tech Dispatch</p>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-end gap-4">
+                        <a href="tel:8285111114" class="bg-white text-slate-900 font-bold px-6 py-3 rounded-xl hover:bg-brandSky hover:text-white transition-colors duration-300 flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-phone"></i><span>Call Us</span>
+                        </a>
+                        <a href="tel:8285111113" class="bg-slate-700 text-white font-bold px-6 py-3 rounded-xl hover:bg-brandSky transition-colors duration-300 flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-phone"></i><span>Call Us</span>
+                        </a>
                     </div>
                 </div>
             </footer>
@@ -277,7 +355,7 @@
                 <div class="bg-slate-50 p-8 rounded-2xl border-2 border-dashed border-slate-300 font-mono text-sm relative">
                     <div class="text-center border-b border-slate-300 pb-4 mb-4">
                         <h3 class="text-xl font-black text-slate-900">ELECTRONIC POINT</h3>
-                        <p class="text-xs text-slate-500">Rajat Path, Mansarovar | 8285111114</p>
+                        <p class="text-xs text-slate-500">Rajat Path, Mansarovar</p>
                     </div>
                     <div class="space-y-2 text-slate-700 mb-6">
                         <p><strong>CLIENT:</strong> <span id="rCust">---------</span></p>
@@ -294,20 +372,21 @@
 
     </main>
 
-    <!-- MOBILE STICKY CALL BAR (WITH PULSING GLOW EFFECTS FOR BETTER MOBILE INTUITION) -->
+    <!-- MOBILE STICKY CALL BAR -->
     <div class="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur border-t border-slate-200 p-3 sm:hidden flex justify-between gap-2 z-50 shadow-[0_-8px_20px_rgba(14,165,233,0.15)]">
         <a href="tel:8285111114" class="flex-1 bg-brandSky active:bg-sky-600 text-white text-center py-3.5 rounded-lg font-bold text-sm shadow-[0_0_15px_rgba(14,165,233,0.3)] flex items-center justify-center space-x-2 transition-all duration-200">
             <i class="fa-solid fa-phone"></i>
-            <span>8285111114</span>
+            <span>Call Us</span>
         </a>
         <a href="tel:8285111113" class="flex-1 bg-brandLight active:bg-sky-100 text-brandSky border border-sky-200 text-center py-3.5 rounded-lg font-bold text-sm flex items-center justify-center space-x-2 transition-all duration-200">
             <i class="fa-solid fa-phone"></i>
-            <span>8285111113</span>
+            <span>Call Us</span>
         </a>
     </div>
 
-    <!-- SCRIPT FOR DASHBOARD TOGGLE & RECEIPT -->
+    <!-- CORE SCRIPTS -->
     <script>
+        // Dashboard Toggle Logic
         let isDashboard = false;
         function toggleView() {
             isDashboard = !isDashboard;
@@ -315,11 +394,11 @@
             document.getElementById('dashboardView').classList.toggle('hidden', !isDashboard);
             document.getElementById('toggleText').innerText = isDashboard ? "View Website" : "Staff Login";
             
-            // Hide sticky bar when in dashboard to save screen space
             const mobileBar = document.querySelector('.fixed.bottom-0');
             if(mobileBar) mobileBar.style.display = isDashboard ? 'none' : 'flex';
         }
 
+        // Receipt Generator Logic
         function updateReceipt() {
             document.getElementById('rCust').innerText = document.getElementById('jobCustName').value || '---------';
             document.getElementById('rPhone').innerText = document.getElementById('jobCustPhone').value || '---------';
@@ -335,6 +414,41 @@
             document.getElementById('jobIssue').value = '';
             updateReceipt();
         }
+
+        // Dynamic Review Carousel Logic
+        const reviews = [
+            { name: "Mukesh Saini", text: "Very pleased with Electronic Point in Jaipur. They promptly repaired my Vu Qled tv. The technicians know their stuff and provide top-notch service." },
+            { name: "Shivansh Sharma", text: "Thank you for fixing my 55inch TCL Tv. It was a wonderful experience and the price was very affordable." },
+            { name: "Arun Kumawat", text: "We got the best services for my TCL LED TV. Reasonable price and fully satisfied." },
+            { name: "Rahul Jain", text: "I am impressed with Electronic Point service. Staff is good and well-knowledgeable. Thanks to the team for repairing my LG LED TV." },
+            { name: "Ratnesh Jain", text: "Quick, good, and best service for my Mi TV. Thank you." }
+        ];
+
+        let currentReviewIndex = 0;
+        
+        function cycleReviews() {
+            const reviewCard = document.getElementById('reviewCard');
+            const reviewText = document.getElementById('reviewText');
+            const reviewName = document.getElementById('reviewName');
+
+            // Fade Out
+            reviewCard.classList.remove('opacity-100');
+            reviewCard.classList.add('opacity-0');
+
+            setTimeout(() => {
+                // Update Content
+                currentReviewIndex = (currentReviewIndex + 1) % reviews.length;
+                reviewText.innerText = '"' + reviews[currentReviewIndex].text + '"';
+                reviewName.innerText = reviews[currentReviewIndex].name;
+                
+                // Fade In
+                reviewCard.classList.remove('opacity-0');
+                reviewCard.classList.add('opacity-100');
+            }, 500); 
+        }
+
+        // Run the carousel every 5 seconds
+        setInterval(cycleReviews, 5000);
     </script>
 </body>
 </html>
