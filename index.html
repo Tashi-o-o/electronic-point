@@ -104,13 +104,23 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     
+    <!-- Updated Tailwind Config for FAQ Animation -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: { brandSky: '#0ea5e9', brandLight: '#f0f9ff', brandDark: '#0f172a' },
-                    animation: { 'marquee': 'marquee 25s linear infinite' },
-                    keyframes: { marquee: { '0%': { transform: 'translateX(0%)' }, '100%': { transform: 'translateX(-50%)' } } }
+                    animation: { 
+                        'marquee': 'marquee 25s linear infinite',
+                        'dropdown': 'dropdown 0.3s ease-out forwards'
+                    },
+                    keyframes: { 
+                        marquee: { '0%': { transform: 'translateX(0%)' }, '100%': { transform: 'translateX(-50%)' } },
+                        dropdown: {
+                            '0%': { opacity: '0', transform: 'translateY(-10px) scaleY(0.95)' },
+                            '100%': { opacity: '1', transform: 'translateY(0) scaleY(1)' }
+                        }
+                    }
                 }
             }
         }
@@ -130,10 +140,6 @@
                 <a href="#services" class="hidden md:block text-sm font-bold text-slate-600 hover:text-brandSky transition-colors">Our Services</a>
                 <a href="#faq" class="hidden md:block text-sm font-bold text-slate-600 hover:text-brandSky transition-colors">FAQ</a>
                 
-                <button aria-label="Staff Login" onclick="toggleView()" id="toggleBtn" class="hidden sm:flex text-xs font-bold text-slate-500 hover:text-brandSky bg-slate-100 px-3 py-1.5 rounded-md border border-transparent hover:border-brandSky/30 transition-all duration-300 items-center space-x-1">
-                    <i class="fa-solid fa-lock" aria-hidden="true"></i>
-                    <span id="toggleText">Staff Login</span>
-                </button>
                 <div class="hidden md:flex items-center space-x-3">
                     <a href="tel:8285111114" aria-label="Call Electronic Point" class="text-sm font-semibold text-slate-600 hover:text-brandSky bg-slate-50 border border-slate-100 hover:border-brandSky/40 px-3 py-2 rounded-lg transition-all duration-300 flex items-center space-x-1 hover:shadow-[0_0_15px_rgba(14,165,233,0.15)]">
                         <i class="fa-solid fa-phone" aria-hidden="true"></i><span>Call Us</span>
@@ -278,7 +284,7 @@
                 </div>
             </section>
 
-            <!-- FAQ SECTION -->
+            <!-- FAQ SECTION (Animated) -->
             <section id="faq" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full scroll-mt-20">
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
                     <div class="lg:col-span-1 space-y-4">
@@ -289,18 +295,18 @@
                         <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:shadow-md transition-all cursor-pointer">
                             <summary class="flex justify-between items-center font-bold text-lg text-slate-800 list-none outline-none">
                                 Do I need to bring my TV to your shop?
-                                <span class="transition group-open:rotate-180 text-brandSky"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></span>
+                                <span class="transition-transform duration-300 group-open:rotate-180 text-brandSky"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></span>
                             </summary>
-                            <div class="text-slate-600 mt-4 leading-relaxed border-t border-slate-100 pt-4">
+                            <div class="text-slate-600 mt-4 leading-relaxed border-t border-slate-100 pt-4 animate-dropdown origin-top">
                                 We offer both! You can schedule a convenient doorstep repair, or you can safely bring your TV directly to our workshop in Mansarovar for a quick, hands-on inspection.
                             </div>
                         </details>
                         <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:shadow-md transition-all cursor-pointer">
                             <summary class="flex justify-between items-center font-bold text-lg text-slate-800 list-none outline-none">
                                 Is it faster than waiting for online retail warranties?
-                                <span class="transition group-open:rotate-180 text-brandSky"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></span>
+                                <span class="transition-transform duration-300 group-open:rotate-180 text-brandSky"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></span>
                             </summary>
-                            <div class="text-slate-600 mt-4 leading-relaxed border-t border-slate-100 pt-4">
+                            <div class="text-slate-600 mt-4 leading-relaxed border-t border-slate-100 pt-4 animate-dropdown origin-top">
                                 Absolutely. Post-warranty repairs or service requests through major platforms like Amazon India or Flipkart can sometimes take weeks for processing and dispatch. We provide rapid, local diagnostics to get your screen running again without the wait.
                             </div>
                         </details>
