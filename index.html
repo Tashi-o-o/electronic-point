@@ -11,7 +11,7 @@
 
     <title>Electronic Point | Doorstep & Drop-Off TV Repair in Jaipur</title>
     
-    <!-- Shortened Meta Description (Under 155 characters) -->
+    <!-- Shortened Meta Description -->
     <meta name="description" content="Top-rated TV repair in Jaipur. Request fast doorstep service or drop-off at our Mansarovar shop. Expert LED, OLED, QLED & panel repairs.">
     <meta name="keywords" content="TV repair Jaipur, bring TV to shop, drop-off TV repair, LED repair near me, QLED screen replacement, Mansarovar TV mechanic, Electronic Point, Samsung TV repair Jaipur, Sony TV repair, LG TV display repair, TV mechanic near me, LED TV theek karne wala, TV repair shop Mansarovar">
     
@@ -63,7 +63,7 @@
     }
     </script>
 
-    <!-- Schema.org Markup for FAQ Rich Snippets -->
+    <!-- Schema.org Markup for FAQ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -104,7 +104,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     
-    <!-- Updated Tailwind Config for FAQ Animation -->
+    <!-- Updated Tailwind Config for Slide-Down Animation -->
     <script>
         tailwind.config = {
             theme: {
@@ -112,13 +112,13 @@
                     colors: { brandSky: '#0ea5e9', brandLight: '#f0f9ff', brandDark: '#0f172a' },
                     animation: { 
                         'marquee': 'marquee 25s linear infinite',
-                        'dropdown': 'dropdown 0.3s ease-out forwards'
+                        'slidedown': 'slidedown 0.4s ease-in-out forwards'
                     },
                     keyframes: { 
                         marquee: { '0%': { transform: 'translateX(0%)' }, '100%': { transform: 'translateX(-50%)' } },
-                        dropdown: {
-                            '0%': { opacity: '0', transform: 'translateY(-10px) scaleY(0.95)' },
-                            '100%': { opacity: '1', transform: 'translateY(0) scaleY(1)' }
+                        slidedown: {
+                            '0%': { opacity: '0', maxHeight: '0' },
+                            '100%': { opacity: '1', maxHeight: '500px' }
                         }
                     }
                 }
@@ -156,26 +156,47 @@
     <main id="mainContainer" class="w-full">
         <div id="customerView" class="w-full flex flex-col space-y-16 py-8">
             
-            <!-- HERO SECTION -->
+            <!-- HERO SECTION (Updated to 2-Column Grid) -->
             <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden relative">
+                    <!-- Background decorative blobs -->
                     <div class="absolute top-0 right-0 w-64 h-64 bg-sky-100 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
-                    <div class="relative px-6 py-16 sm:px-12 sm:py-24 text-center max-w-4xl mx-auto space-y-8">
-                        <div class="inline-flex items-center space-x-2 bg-brandLight border border-sky-200 px-4 py-1.5 rounded-full text-sm text-brandSky font-bold shadow-sm">
-                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                            <span>Serving All Areas of Jaipur</span>
+                    <div class="absolute bottom-0 left-0 w-72 h-72 bg-slate-100 rounded-full blur-3xl opacity-50 translate-y-1/3 -translate-x-1/3"></div>
+                    
+                    <div class="relative p-8 sm:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <!-- Text Content (Left) -->
+                        <div class="space-y-8 text-center lg:text-left z-10">
+                            <div class="inline-flex items-center space-x-2 bg-brandLight border border-sky-200 px-4 py-1.5 rounded-full text-sm text-brandSky font-bold shadow-sm">
+                                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                                <span>Serving All Areas of Jaipur</span>
+                            </div>
+                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                                Expert TV Repair & Installation
+                            </h1>
+                            <p class="text-base sm:text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
+                                Fast, affordable, and highly reliable repair solutions for Samsung, Sony, LG, and all major LED, Smart, and QLED TVs. Request doorstep service or visit our Mansarovar workshop today!
+                            </p>
+                            <div class="pt-2 flex flex-col sm:flex-row items-center lg:justify-start justify-center gap-4">
+                                <a href="tel:8285111114" aria-label="Book TV Repair Service Now" class="w-full sm:w-auto bg-brandSky hover:bg-sky-600 px-8 py-4 rounded-xl font-bold text-white transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center space-x-3 shadow-lg hover:shadow-[0_0_25px_rgba(14,165,233,0.5)]">
+                                    <i class="fa-solid fa-wrench" aria-hidden="true"></i>
+                                    <span>Book Service Now</span>
+                                </a>
+                            </div>
                         </div>
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
-                            Expert TV Repair & Installation <br class="hidden sm:inline">At Home or In-Store
-                        </h1>
-                        <p class="text-base sm:text-xl text-slate-600 max-w-2xl mx-auto">
-                            Fast, affordable, and highly reliable repair solutions for Samsung, Sony, LG, and all major LED, Smart, and QLED TVs. Request doorstep service or visit our Mansarovar workshop today!
-                        </p>
-                        <div class="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
-                            <a href="tel:8285111114" aria-label="Book TV Repair Service Now" class="w-full sm:w-auto bg-brandSky hover:bg-sky-600 px-8 py-4 rounded-xl font-bold text-white transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center space-x-3 shadow-lg hover:shadow-[0_0_25px_rgba(14,165,233,0.5)]">
-                                <i class="fa-solid fa-wrench" aria-hidden="true"></i>
-                                <span>Book Service Now</span>
-                            </a>
+                        
+                        <!-- Image Content (Right) -->
+                        <div class="relative hidden lg:block rounded-2xl overflow-hidden shadow-2xl border border-slate-100 transform hover:scale-[1.02] transition-transform duration-500 z-10">
+                            <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=800&q=80" alt="Modern flat screen TV in living room" class="w-full h-[450px] object-cover">
+                            <!-- Floating Badge -->
+                            <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-slate-100 flex items-center space-x-4">
+                                <div class="bg-green-100 p-2 rounded-full">
+                                    <i class="fa-solid fa-shield-halved text-green-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Trusted Service</p>
+                                    <p class="text-sm font-extrabold text-slate-900">1-Year Warranty</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -284,7 +305,7 @@
                 </div>
             </section>
 
-            <!-- FAQ SECTION (Animated) -->
+            <!-- FAQ SECTION (Animated with physical Slide-Down) -->
             <section id="faq" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full scroll-mt-20">
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
                     <div class="lg:col-span-1 space-y-4">
@@ -297,7 +318,7 @@
                                 Do I need to bring my TV to your shop?
                                 <span class="transition-transform duration-300 group-open:rotate-180 text-brandSky"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></span>
                             </summary>
-                            <div class="text-slate-600 mt-4 leading-relaxed border-t border-slate-100 pt-4 animate-dropdown origin-top">
+                            <div class="text-slate-600 mt-4 leading-relaxed border-t border-slate-100 pt-4 animate-slidedown overflow-hidden">
                                 We offer both! You can schedule a convenient doorstep repair, or you can safely bring your TV directly to our workshop in Mansarovar for a quick, hands-on inspection.
                             </div>
                         </details>
@@ -306,7 +327,7 @@
                                 Is it faster than waiting for online retail warranties?
                                 <span class="transition-transform duration-300 group-open:rotate-180 text-brandSky"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></span>
                             </summary>
-                            <div class="text-slate-600 mt-4 leading-relaxed border-t border-slate-100 pt-4 animate-dropdown origin-top">
+                            <div class="text-slate-600 mt-4 leading-relaxed border-t border-slate-100 pt-4 animate-slidedown overflow-hidden">
                                 Absolutely. Post-warranty repairs or service requests through major platforms like Amazon India or Flipkart can sometimes take weeks for processing and dispatch. We provide rapid, local diagnostics to get your screen running again without the wait.
                             </div>
                         </details>
