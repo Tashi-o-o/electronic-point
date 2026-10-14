@@ -48,73 +48,90 @@
     </script>
 
     <style>
-        :root { --bg-dark: #090d16; --bg-card: rgba(30, 41, 59, 0.65); --bg-card-hover: rgba(51, 65, 85, 0.8); --border-glass: rgba(255, 255, 255, 0.1); --accent-sky: #0ea5e9; --accent-sky-glow: rgba(14, 165, 233, 0.35); --whatsapp: #25D366; --whatsapp-glow: rgba(37, 211, 102, 0.35); --text-main: #f8fafc; --text-muted: #94a3b8; }
+        :root {
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --bg-subtle: #f1f5f9;
+            --border-color: #e2e8f0;
+            --brand-sky: #0ea5e9;
+            --brand-sky-hover: #0284c7;
+            --brand-light: #f0f9ff;
+            --brand-dark: #0f172a;
+            --whatsapp: #25D366;
+            --whatsapp-hover: #1ebe5d;
+            --text-dark: #0f172a;
+            --text-body: #334155;
+            --text-muted: #64748b;
+        }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif; background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
-        body { overflow-x: hidden; padding-bottom: 76px; background-image: radial-gradient(circle at 15% 10%, rgba(14, 165, 233, 0.12), transparent 35%), radial-gradient(circle at 85% 30%, rgba(37, 211, 102, 0.08), transparent 35%); }
+        html { scroll-behavior: smooth; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif; background-color: var(--bg-body); color: var(--text-body); line-height: 1.6; }
+        body { overflow-x: hidden; padding-bottom: 76px; }
         @media (min-width: 768px) { body { padding-bottom: 0; } }
         a { color: inherit; text-decoration: none; }
-        .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
-        .glass { background: var(--bg-card); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--border-glass); border-radius: 20px; }
-        .navbar { position: sticky; top: 0; z-index: 40; background: rgba(9, 13, 22, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-glass); padding: 14px 0; }
-        .nav-inner { display: flex; align-items: center; justify-content: space-between; }
-        .brand-logo { display: flex; align-items: center; gap: 10px; font-size: 1.25rem; font-weight: 800; letter-spacing: -0.5px; }
-        .brand-logo span { color: var(--accent-sky); }
-        .nav-links { display: none; gap: 24px; font-size: 0.9rem; font-weight: 600; color: var(--text-muted); }
-        .nav-links a:hover { color: var(--text-main); }
-        @media (min-width: 768px) { .nav-links { display: flex; align-items: center; } }
-        .hero { padding: 48px 0 36px; }
-        .hero-box { padding: 32px 24px; position: relative; overflow: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+        .navbar { position: sticky; top: 0; z-index: 40; background: #ffffff; border-bottom: 1px solid var(--border-color); height: 64px; display: flex; align-items: center; box-shadow: 0 1px 2px rgba(0,0,0,0.03); }
+        .nav-inner { width: 100%; display: flex; align-items: center; justify-content: space-between; }
+        .brand-logo { display: flex; align-items: center; gap: 8px; font-size: 1.25rem; font-weight: 800; color: var(--text-dark); letter-spacing: -0.5px; }
+        .brand-logo span { color: var(--brand-sky); }
+        .nav-links { display: none; gap: 24px; font-size: 0.875rem; font-weight: 700; color: #475569; align-items: center; }
+        .nav-links a:hover { color: var(--brand-sky); }
+        @media (min-width: 768px) { .nav-links { display: flex; } }
+        .hero { padding: 32px 0 24px; }
+        .hero-box { padding: 32px 24px; position: relative; overflow: hidden; background: #ffffff; }
         @media (min-width: 768px) { .hero-box { padding: 56px 48px; } }
-        .badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(14, 165, 233, 0.15); border: 1px solid rgba(14, 165, 233, 0.4); color: #38bdf8; font-size: 0.8rem; font-weight: 700; padding: 6px 14px; border-radius: 999px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .pulse-dot { width: 8px; height: 8px; background-color: #25D366; border-radius: 50%; box-shadow: 0 0 8px #25D366; }
-        h1 { font-size: 2.1rem; font-weight: 800; line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.5px; }
-        @media (min-width: 768px) { h1 { font-size: 3.1rem; max-width: 800px; } }
-        .hero-sub { color: var(--text-muted); font-size: 1.05rem; max-width: 680px; margin-bottom: 28px; }
-        .cta-group { display: flex; flex-direction: column; gap: 14px; }
+        .blob-sky { position: absolute; top: 0; right: 0; width: 250px; height: 250px; background: #e0f2fe; border-radius: 50%; filter: blur(50px); opacity: 0.7; transform: translate(30%, -30%); pointer-events: none; }
+        .badge { display: inline-flex; align-items: center; gap: 8px; background: var(--brand-light); border: 1px solid #bae6fd; color: var(--brand-sky); font-size: 0.82rem; font-weight: 700; padding: 6px 14px; border-radius: 999px; margin-bottom: 20px; }
+        .pulse-dot { width: 8px; height: 8px; background-color: var(--whatsapp); border-radius: 50%; }
+        h1 { font-size: 2.1rem; font-weight: 800; line-height: 1.2; margin-bottom: 16px; color: var(--text-dark); letter-spacing: -0.5px; position: relative; }
+        @media (min-width: 768px) { h1 { font-size: 3.2rem; max-width: 820px; } }
+        .hero-sub { color: #475569; font-size: 1.05rem; max-width: 700px; margin-bottom: 28px; position: relative; }
+        .cta-group { display: flex; flex-direction: column; gap: 14px; position: relative; }
         @media (min-width: 640px) { .cta-group { flex-direction: row; } }
-        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 28px; border-radius: 14px; font-weight: 700; font-size: 1rem; transition: all 0.25s ease; cursor: pointer; border: none; text-align: center; }
-        .btn-call { background: var(--accent-sky); color: #fff; box-shadow: 0 4px 20px var(--accent-sky-glow); }
-        .btn-call:hover { background: #0284c7; transform: translateY(-2px); }
-        .btn-wa { background: var(--whatsapp); color: #051b0d; box-shadow: 0 4px 20px var(--whatsapp-glow); }
-        .btn-wa:hover { background: #20bd5a; transform: translateY(-2px); }
-        .trust-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border-glass); font-size: 0.88rem; }
-        .trust-item { display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--text-main); }
-        section { padding: 36px 0; }
-        .section-header { margin-bottom: 28px; }
-        .section-header h2 { font-size: 1.75rem; font-weight: 800; margin-bottom: 8px; }
-        .section-header p { color: var(--text-muted); font-size: 0.95rem; }
-        .brand-selector-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 20px; }
-        .brand-selector-bar span { font-size: 0.85rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
-        .brand-pill { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-glass); color: var(--text-main); padding: 6px 14px; border-radius: 999px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
-        .brand-pill.active, .brand-pill:hover { background: var(--accent-sky); border-color: var(--accent-sky); color: #fff; }
-        .symptom-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 15px 28px; border-radius: 12px; font-weight: 700; font-size: 0.95rem; transition: all 0.25s ease; cursor: pointer; border: none; text-align: center; }
+        .btn-call { background: var(--brand-sky); color: #ffffff; box-shadow: 0 4px 14px rgba(14, 165, 233, 0.3); }
+        .btn-call:hover { background: var(--brand-sky-hover); transform: translateY(-2px); }
+        .btn-wa { background: var(--whatsapp); color: #ffffff; box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3); }
+        .btn-wa:hover { background: var(--whatsapp-hover); transform: translateY(-2px); }
+        .trust-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border-color); font-size: 0.9rem; position: relative; }
+        .trust-item { display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--text-dark); }
+        .trust-item span { color: var(--brand-sky); font-size: 1.1rem; }
+        section { padding: 32px 0; }
+        .section-header { margin-bottom: 24px; }
+        .section-header h2 { font-size: 1.85rem; font-weight: 800; color: var(--text-dark); margin-bottom: 6px; }
+        .section-header p { color: var(--text-muted); font-size: 0.98rem; }
+        .brand-selector-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 20px; }
+        .brand-selector-bar span { font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-right: 4px; }
+        .brand-pill { background: #ffffff; border: 1px solid var(--border-color); color: var(--text-body); padding: 7px 16px; border-radius: 999px; font-size: 0.85rem; font-weight: 700; cursor: pointer; transition: all 0.2s; }
+        .brand-pill.active, .brand-pill:hover { background: var(--brand-sky); border-color: var(--brand-sky); color: #ffffff; }
+        .symptom-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
         @media (min-width: 640px) { .symptom-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 992px) { .symptom-grid { grid-template-columns: repeat(3, 1fr); } }
-        .symptom-card { padding: 20px; display: flex; flex-direction: column; justify-content: space-between; gap: 14px; cursor: pointer; transition: all 0.25s ease; text-align: left; color: var(--text-main); }
-        .symptom-card:hover { background: var(--bg-card-hover); border-color: var(--accent-sky); transform: translateY(-3px); }
-        .symptom-title { font-weight: 700; font-size: 1.05rem; display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
-        .symptom-desc { font-size: 0.85rem; color: var(--text-muted); }
-        .symptom-action { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: 700; color: #4ade80; }
+        .symptom-card { background: #ffffff; border: 1px solid var(--border-color); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; gap: 14px; cursor: pointer; transition: all 0.25s ease; text-align: left; }
+        .symptom-card:hover { border-color: var(--brand-sky); box-shadow: 0 8px 20px rgba(14, 165, 233, 0.12); transform: translateY(-3px); }
+        .symptom-title { font-weight: 800; font-size: 1.08rem; color: var(--text-dark); display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+        .symptom-desc { font-size: 0.88rem; color: #475569; margin-top: 6px; }
+        .symptom-action { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 700; color: var(--brand-sky); }
         .two-col { display: grid; grid-template-columns: 1fr; gap: 24px; }
-        @media (min-width: 900px) { .two-col { grid-template-columns: 1.1fr 0.9fr; } }
-        .savings-box { padding: 28px; }
-        .savings-tag { display: inline-block; background: rgba(37, 211, 102, 0.15); color: #4ade80; font-weight: 800; font-size: 0.8rem; padding: 4px 12px; border-radius: 6px; margin-bottom: 12px; }
+        @media (min-width: 900px) { .two-col { grid-template-columns: 1.15fr 0.85fr; } }
+        .content-box { padding: 32px; }
+        .savings-tag { display: inline-block; background: #dcfce7; color: #15803d; font-weight: 800; font-size: 0.78rem; padding: 4px 12px; border-radius: 6px; margin-bottom: 12px; }
         .comparison-list { list-style: none; margin-top: 20px; display: flex; flex-direction: column; gap: 14px; }
-        .comparison-list li { background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border-glass); padding: 14px; border-radius: 12px; font-size: 0.9rem; }
-        .comparison-list strong { color: #38bdf8; display: block; margin-bottom: 4px; }
+        .comparison-list li { background: var(--bg-body); border: 1px solid var(--border-color); padding: 16px; border-radius: 14px; font-size: 0.9rem; color: #475569; }
+        .comparison-list strong { color: var(--text-dark); display: block; margin-bottom: 4px; font-size: 0.98rem; }
         .brand-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-        .brand-card { background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border-glass); border-radius: 14px; padding: 18px 14px; text-align: center; font-weight: 800; font-size: 1.05rem; color: #e2e8f0; }
-        .brand-card span { display: block; font-size: 0.75rem; font-weight: 500; color: var(--text-muted); margin-top: 4px; }
-        .map-wrapper { border-radius: 16px; overflow: hidden; height: 300px; border: 1px solid var(--border-glass); }
-        .area-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
-        .area-link-pill { background: rgba(255, 255, 255, 0.06); border: 1px solid var(--border-glass); padding: 8px 16px; border-radius: 999px; font-size: 0.85rem; font-weight: 600; transition: all 0.2s; }
-        .area-link-pill:hover { border-color: var(--accent-sky); color: #38bdf8; }
-        footer { border-top: 1px solid var(--border-glass); padding: 32px 0; margin-top: 32px; font-size: 0.85rem; color: var(--text-muted); text-align: center; }
-        .mobile-sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 50; display: grid; grid-template-columns: 1fr 1fr; background: #090d16; border-top: 1px solid var(--border-glass); box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.6); }
-        .mobile-sticky-bar a { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 16px 10px; font-weight: 800; font-size: 0.95rem; }
-        .mobile-call { background: var(--accent-sky); color: #fff; }
-        .mobile-wa { background: var(--whatsapp); color: #04140a; }
+        .brand-card { background: var(--bg-body); border: 1px solid var(--border-color); border-radius: 14px; padding: 18px 14px; text-align: center; font-weight: 800; font-size: 1rem; color: var(--text-dark); }
+        .brand-card span { display: block; font-size: 0.75rem; font-weight: 600; color: var(--text-muted); margin-top: 4px; }
+        .map-wrapper { border-radius: 16px; overflow: hidden; height: 320px; border: 1px solid var(--border-color); }
+        .area-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+        .area-link-pill { background: var(--bg-subtle); border: 1px solid var(--border-color); color: #334155; padding: 7px 14px; border-radius: 999px; font-size: 0.82rem; font-weight: 700; transition: all 0.2s; }
+        .area-link-pill:hover { background: var(--brand-sky); border-color: var(--brand-sky); color: #ffffff; }
+        footer { background: var(--brand-dark); color: #94a3b8; padding: 40px 0; margin-top: 40px; font-size: 0.875rem; text-align: center; border-top: 1px solid #1e293b; }
+        footer strong { color: #ffffff; }
+        .mobile-sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 50; display: grid; grid-template-columns: 1fr 1fr; background: #ffffff; border-top: 1px solid var(--border-color); box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.06); }
+        .mobile-sticky-bar a { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 15px 10px; font-weight: 800; font-size: 0.9rem; }
+        .mobile-call { background: var(--brand-dark); color: #ffffff; }
+        .mobile-wa { background: var(--whatsapp); color: #ffffff; }
         @media (min-width: 768px) { .mobile-sticky-bar { display: none; } }
     </style>
 </head>
@@ -127,18 +144,19 @@
                 ELECTRONIC<span>POINT</span>
             </a>
             <nav class="nav-links">
-                <a href="index.html">Home</a>
+                <a href="index.html">Main Home</a>
                 <a href="#estimator">Quick Quote</a>
                 <a href="#brands">Why Repair</a>
                 <a href="#location">Workshop Map</a>
-                <a href="tel:+918285111114" class="btn btn-call" style="padding: 8px 18px; font-size: 0.85rem;">+91 8285111114</a>
+                <a href="tel:+918285111114" class="btn btn-call" style="padding: 8px 18px; font-size: 0.85rem;">Call +91 8285111114</a>
             </nav>
         </div>
     </header>
 
     <main class="container">
         <section class="hero">
-            <div class="glass hero-box">
+            <div class="card hero-box">
+                <div class="blob-sky"></div>
                 <div class="badge">
                     <span class="pulse-dot"></span>
                     Technician Available Today in Vaishali Nagar
@@ -152,9 +170,9 @@
                     <a id="heroWaBtn" href="https://wa.me/918285111114" target="_blank" rel="noopener noreferrer" class="btn btn-wa">Get Instant Quote on WhatsApp</a>
                 </div>
                 <div class="trust-strip">
-                    <div class="trust-item">&#10003; Within 2-Hour Home Visit</div>
-                    <div class="trust-item">&#10003; Up to 1-Year Repair Warranty</div>
-                    <div class="trust-item">&#10003; 15+ Years Local Experience</div>
+                    <div class="trust-item"><span>&#10003;</span> Within 2-Hour Home Visit</div>
+                    <div class="trust-item"><span>&#10003;</span> Up to 1-Year Repair Warranty</div>
+                    <div class="trust-item"><span>&#10003;</span> 15+ Years Local Experience</div>
                 </div>
             </div>
         </section>
@@ -175,27 +193,27 @@
                 <button type="button" class="brand-pill" data-brand="Vu / TCL">Vu / TCL</button>
             </div>
             <div class="symptom-grid">
-                <button type="button" class="glass symptom-card" onclick="sendSymptomQuote('Sound OK, Blank / Dark Screen')">
+                <button type="button" class="symptom-card" onclick="sendSymptomQuote('Sound OK, Blank / Dark Screen')">
                     <div><div class="symptom-title"><span>Sound OK, Blank Screen</span><span>💡</span></div><p class="symptom-desc">Audio plays normally, but the display is black or very dim. Usually a burnt LED backlight strip.</p></div>
                     <span class="symptom-action">Tap for Backlight Quote &rarr;</span>
                 </button>
-                <button type="button" class="glass symptom-card" onclick="sendSymptomQuote('TV Not Turning On / Red Light Blinking')">
+                <button type="button" class="symptom-card" onclick="sendSymptomQuote('TV Not Turning On / Red Light Blinking')">
                     <div><div class="symptom-title"><span>TV Dead / Red Light Blinking</span><span>⚡</span></div><p class="symptom-desc">TV won't power on, clicks repeatedly, or standby light blinks (2x, 4x, 6x error codes).</p></div>
                     <span class="symptom-action">Tap for Motherboard Quote &rarr;</span>
                 </button>
-                <button type="button" class="glass symptom-card" onclick="sendSymptomQuote('Horizontal / Vertical Lines on Screen')">
+                <button type="button" class="symptom-card" onclick="sendSymptomQuote('Horizontal / Vertical Lines on Screen')">
                     <div><div class="symptom-title"><span>Horizontal / Vertical Lines</span><span>📺</span></div><p class="symptom-desc">Colored lines, flickering double images, or half-black screen caused by COF/Panel bonding faults.</p></div>
                     <span class="symptom-action">Tap for Panel Bonding Quote &rarr;</span>
                 </button>
-                <button type="button" class="glass symptom-card" onclick="sendSymptomQuote('Stuck on Logo / Wi-Fi Issue')">
+                <button type="button" class="symptom-card" onclick="sendSymptomQuote('Stuck on Logo / Wi-Fi Issue')">
                     <div><div class="symptom-title"><span>Stuck on Logo / Smart TV Issue</span><span>🔄</span></div><p class="symptom-desc">Android TV stuck on boot screen, apps crashing, or Wi-Fi not connecting.</p></div>
                     <span class="symptom-action">Tap for Software Quote &rarr;</span>
                 </button>
-                <button type="button" class="glass symptom-card" onclick="sendSymptomQuote('Broken / Cracked Display Panel')">
+                <button type="button" class="symptom-card" onclick="sendSymptomQuote('Broken / Cracked Display Panel')">
                     <div><div class="symptom-title"><span>Broken / Cracked Screen</span><span>🛠️</span></div><p class="symptom-desc">Physical impact or black ink spots inside the glass requiring complete display panel replacement.</p></div>
                     <span class="symptom-action">Check Panel Availability &rarr;</span>
                 </button>
-                <button type="button" class="glass symptom-card" onclick="sendSymptomQuote('TV Wall Mount Installation')">
+                <button type="button" class="symptom-card" onclick="sendSymptomQuote('TV Wall Mount Installation')">
                     <div><div class="symptom-title"><span>Wall Mount Installation</span><span>🔩</span></div><p class="symptom-desc">Same-day drilling, fixed or swivel bracket mounting, and clean setup for 32" to 75" TVs.</p></div>
                     <span class="symptom-action">Book Installation &rarr;</span>
                 </button>
@@ -204,9 +222,9 @@
 
         <section id="brands">
             <div class="two-col">
-                <div class="glass savings-box">
+                <div class="card content-box">
                     <span class="savings-tag">SAVE UP TO 60% ON REPAIRS</span>
-                    <h2>Why Component-Level Repair Beats Service Center Replacements</h2>
+                    <h2 style="color: var(--text-dark); font-size: 1.5rem; font-weight: 800;">Why Component-Level Repair Beats Service Center Replacements</h2>
                     <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 8px;">Authorized brand service centers swap entire board assemblies at high retail prices. Our technicians fix the exact failed component.</p>
                     <ul class="comparison-list">
                         <li><strong>LED Backlight Replacement (Save ~65%)</strong>We safely unmount the glass and install original-grade aluminum-backed LED strips instead of replacing the whole display assembly.</li>
@@ -214,8 +232,8 @@
                         <li><strong>COF & Panel Bonding</strong>Lines or double images on Sony, Samsung, and LG screens are resolved using precision display bonding diagnostics.</li>
                     </ul>
                 </div>
-                <div class="glass savings-box">
-                    <h2>Brands We Repair Daily</h2>
+                <div class="card content-box">
+                    <h2 style="color: var(--text-dark); font-size: 1.5rem; font-weight: 800;">Brands We Repair Daily</h2>
                     <p style="color: var(--text-muted); font-size: 0.92rem; margin: 8px 0 20px;">Genuine spare parts stocked locally for all 32", 43", 50", 55", and 65"+ 4K Smart TVs.</p>
                     <div class="brand-grid">
                         <div class="brand-card">SONY BRAVIA<span>LED / 4K / OLED Error Blink</span></div>
@@ -230,13 +248,13 @@
         </section>
 
         <section id="location">
-            <div class="glass savings-box">
+            <div class="card content-box">
                 <div class="two-col" style="align-items: center;">
                     <div>
                         <div class="badge" style="margin-bottom: 12px;">Dedicated Vaishali Nagar Mobile Van</div>
-                        <h2>Fast Doorstep Service & Workshop Backup</h2>
-                        <p style="color: var(--text-muted); font-size: 0.95rem; margin: 12px 0 20px;">Backed by our central workshop at <strong>61/17, Rajat Path, Sector 61, Mansarovar</strong>, our mobile technicians cover Vaishali Nagar, Chitrakoot, and Queens Road daily with rapid 2-hour home visits.</p>
-                        <p style="font-size: 0.85rem; font-weight: 700; color: var(--text-main); text-transform: uppercase;">Nearby Areas & Quick Links:</p>
+                        <h2 style="color: var(--text-dark); font-size: 1.6rem; font-weight: 800;">Fast Doorstep Service & Workshop Backup</h2>
+                        <p style="color: #475569; font-size: 0.95rem; margin: 12px 0 20px;">Backed by our central workshop at <strong>61/17, Rajat Path, Sector 61, Mansarovar</strong>, our mobile technicians cover Vaishali Nagar, Chitrakoot, and Queens Road daily with rapid 2-hour home visits.</p>
+                        <p style="font-size: 0.8rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase;">Nearby Areas & Quick Links:</p>
                         <div class="area-links">
                             <a href="index.html" class="area-link-pill">&larr; Main Homepage</a>
                             <a href="led-tv-repair-mansarovar.html" class="area-link-pill">Mansarovar</a>
@@ -262,7 +280,7 @@
 
     <div class="mobile-sticky-bar">
         <a href="tel:+918285111114" class="mobile-call">Call Now</a>
-        <a id="stickyWaBtn" href="https://wa.me/918285111114" target="_blank" rel="noopener noreferrer" class="mobile-wa">WhatsApp Us</a>
+        <a id="stickyWaBtn" href="https://wa.me/918285111114" target="_blank" rel="noopener noreferrer" class="mobile-wa">WhatsApp Estimate</a>
     </div>
 
     <script>
